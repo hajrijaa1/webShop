@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Passionis | Home Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+    <style>
+        .about{
+            color: white;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        body{
+            background-color: lightpink;
+            color: black;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<section class="home-slider owl-carousel img about">
+    <div class="slider-item">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row slider-text align-items-center" data-scrollax-parent="true">
+
+                <div class="col-md-6 col-sm-12 ftco-animate">
+                    <h1 class="subheading">Najkvalitetnija</h1>
+                    <h2 class="mb-4">odjeća u gradu!</h2>
+                    <p class="mb-4 mb-md-5">U Passionis pronađite najkvalitetniju odjeću i obuću za Vas i Vaše najmilije. Uživajte u pogodnostima
+                        naše ponude i SUPER cijenama! Za Vas smo pripremili samo najbolje zato požurite po odličnu ponudu iz našeg asortimana.</p>
+                    <p><a th:href="@{'/ponuda'}" class="btn btn-info p-3 px-xl-4 py-xl-3">Pogledajte ponudu</a></p>
+                </div>
+                <div class="col-md-6 ftco-animate">
+                    <img src="https://images.unsplash.com/photo-1590080437884-49f76129c459?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Section -->
+<div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+        <h1 class="w3-center">O nama</h1><br>
+        <h5 class="w3-center">Sa vama smo dugih 10 godina...</h5>
+        <p class="w3-large">Otkako smo se pojavili u Vašem  gradu, naša ponuda se iz godine u godinu mijenjala i sa sobom nosila
+        nove trendove. Postali smo prepoznatljivi u cijeloj BiH po super ponudama i još boljim cijenama. Naši proizvodi su
+            udobni, kvalitetni i što je najbitnije, širok asortiman je prilagođen za sve uzraste. </p>
+        <p class="w3-large w3-text-grey w3-hide-medium">Dođite i uvjerite se u naš kvalitet. Posjetite nas na adresi 7. Muslimanska Kakanj.</p>
+    </div>
+</div>
+<div class="w3-container w3-padding-64" id="contact">
+    <h1>Kontaktirajte nas</h1><br>
+    <p> Jeste li gladni? Onda nas nazovite slobodno, ne ujedamo majke mi. </p>
+    <p class="w3-text-blue-grey w3-large"><b>Passionis, 7. muslimanska Kakanj, 72240 Kakanj, Bosna i Hercegovina</b></p>
+    <p>Broj telefona: 062-880-159 ili putem e-maila: passionis.kakanj@gmail.com</p>
+</div>
+</body>
+</html>

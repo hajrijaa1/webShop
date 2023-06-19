@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Passionis | Ažuriranje</title>
+</head>
+<style>
+    body{
+        background-color: lightpink;
+    }
+</style>
+<body>
+<div style="display: flex; justify-content: flex-end; align-items: center; margin: 50px;">
+    <a class="btn btn-success" th:href="@{'/ponuda'}" role="button">Ponuda</a>
+    <a class="btn btn-info" th:href="@{'/ponuda/dodaj'}" role="button">Dodaj artikal</a>
+</div>
+<!-- Menu Section -->
+<div class="w3-row w3-padding-64" id="menu">
+    <div class="w3-col l6 w3-padding-large">
+        <div th:each="artikal : ${ponuda}">
+            <h1 class="w3-center"><a th:href="@{'/ponuda/artikal?id=' + ${artikal.getId()}}" th:text="${artikal.getNaziv()}"></a></h1><br>
+            <span>Cijena: <h4 style="display: inline" th:text="${artikal.getCijena()}">KM</h4></span><br>
+            <span>Kategorija: <p style="display: inline" class="w3-text-grey" th:text="${artikal.getKategorija().getNaziv()}">Assortment of fresh baked fruit breads and muffins 5.50</p></span><br>
+            <p>Pritisnite na naziv artikla za više detalja</p><br>
+            <a th:href="@{'/azuriraj/artikal?id=' + ${artikal.getId()}}" type="button" class="btn btn-success" >Ažuriraj artikal</a>
+            <hr>
+        </div>
+    </div>
+
+    <div class="w3-col l6 w3-padding-large">
+        <img src="https://unsplash.com/photos/QZGQO3NvsLo" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
+    </div>
+</div>
+</body>
+</html>

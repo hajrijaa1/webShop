@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Passionis | Ponuda</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<style>
+    body{
+        background-color: lightpink;
+    }
+</style>
+<body>
+<div>
+    <a th:href="@{'/azuriraj'}" role="button">Izmjena</a>
+    <a th:href="@{'/korpa'}" role="button" >Korpa</a>
+</div>
+<div class="w3-row w3-padding-64" id="menu" style="display: flex; justify-content: center; align-items: center;">
+    <div class="w3-col l6 w3-padding-large">
+        <div th:each="artikal : ${ponuda}">
+            <h1 class="w3-center"><a th:href="@{'/ponuda/artikal?id=' + ${artikal.getId()}}" th:text="${artikal.getNaziv()}"></a></h1><br>
+            <span>Cijena: <h4 style="display: inline" th:text="${artikal.getCijena()}">KM</h4></span><br>
+            <span>Kategorija: <p style="display: inline" class="w3-text-grey" th:text="${artikal.getKategorija().getNaziv()}">Assortment of fresh baked fruit breads and muffins 5.50</p></span><br>
+            <a th:href="@{'/ponuda/artikal?id=' + ${artikal.getId()}}" type="button" class="btn btn-info" >Više</a>
+            <a th:href="@{'/korpa/dodaj?id=' + ${artikal.getId()}}" type="button" class="btn btn-success" >Dodaj U Korpu</a>
+            <hr>
+        </div>
+    </div>
+</div>
+</body>
+</html>

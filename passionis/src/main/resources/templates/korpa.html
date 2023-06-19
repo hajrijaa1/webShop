@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Passionis</title>
+</head>
+<style>
+    body{
+        background-color: lightpink;
+    }
+</style>
+<body>
+<div th:each="proizvod : ${korpa}" class="container">
+    <dl>
+        <dt><span th:text="${proizvod.getNaziv()}">Naziv</span></dt>
+        <dd th:text="${proizvod.getCijena()} + 'BAM'">Cijena</dd>
+    </dl>
+</div>
+<br>
+<br>
+<hr>
+<div class="container">
+    <div>
+        <h1 th:text="'Total:' + ${cijena} + 'BAM'">Total cijena</h1>
+    </div>
+    <br>
+    <a th:href="@{'/korpa/kraj'}" type="button" class="btn btn-success">Završi kupovinu</a>
+    <a th:href="@{'/korpa/izbrisi'}" type="button" class="btn btn-danger">Izbriši sve</a>
+</div>
+<a th:href="@{'/ponuda'}" class="btn btn-warning p-3 px-xl-4 py-xl-3">Ponuda</a>
+</body>
+</html>

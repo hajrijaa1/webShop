@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Passionis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<style>
+    body{
+        background-color: lightpink;
+    }
+</style>
+<body>
+    <div class="container">
+        <form action="#" th:action="@{'/save'}" th:object="${noviArtikal}" method="post">
+            <div align="left">
+                <tr>
+                    <label class="form-label">Naziv</label>
+                    <td>
+                        <input type="hidden" th:field="*{id}"/>
+                        <input type="text" th:text="${trenutniArtikal.getNaziv()}" th:field="*{naziv}" class="form-control"
+                               placeholder="Naziv jela"/>
+                    </td>
+                </tr>
+            </div>
+            <div align="left">
+                <tr>
+                    <label class="form-label">Cijena</label>
+                    <td>
+                        <input type="text"  th:text="${trenutniArtikal.getCijena()}" th:field="*{cijena}" class="form-control"
+                               placeholder="Cijena jela"/>
+                    </td>
+                </tr>
+            </div>
+            <div align="left">
+                <tr>
+                    <label for="kategorijaa">Kategorija</label>
+                    <td>
+                        <select th:field="*{kategorija_id}" class="form-control" id="kategorijaa">
+                            <option th:each="kategorija : ${kategorije}" th:text="${kategorija.getNaziv()}" th:value="${kategorija.getId()}">nešto</option>
+                        </select>
+                    </td>
+                </tr>
+            </div>
+            <br/>
+            <tr>
+                <td colspan="2">
+                    <button type="submit" class="btn btn-success">Dodaj</button>
+                </td>
+            </tr>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Passionis | Kraj Kupovine</title>
+</head>
+<style>
+    body{
+        background-color: lightpink;
+    }
+</style>
+<body>
+<div class="jumbotron">
+    <h1 class="display-4">Vaša naruđba je primljena!</h1>
+    <p class="lead">[[${#httpServletRequest.remoteUser}]], Vašu smo naruđbu spremili. Čekamo Vas!</p>
+    <hr class="my-4">
+    <p class="lead">
+        <a th:href="@{'/'}" class="btn btn-primary btn-lg" role="button">Nazad na početnu</a>
+    </p>
+</div>
+</body>
+</html>

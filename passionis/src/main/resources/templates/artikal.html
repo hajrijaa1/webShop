@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Passionis | Artikal</title>
+</head>
+<style>
+    body{
+        background-color: lightpink;
+    }
+</style>
+<body>
+<header class="w3-display-container w3-content w3-wide" style="max-width:2000px;min-width:500px" id="home">
+    <img class="w3-image" src="https://unsplash.com/photos/96oddxihsfA" alt="Dzemperi" style="width: 100%; height: 500px;">
+    <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+        <h1 class="w3-xxlarge">Passionis | Podaci o artiklu</h1>
+    </div>
+</header>
+<hr>
+<hr>
+<h1 th:text="${artikal.getNaziv()}" class="w3-center">Artikal</h1><br>
+<div class="container">
+    <span>Cijena: <h4 style="display: inline" th:text="${artikal.getCijena()}">KM</h4></span><br>
+    <span>Kategorija: <p style="display: inline" class="w3-text-grey" th:text="${artikal.getKategorija().getNaziv()}">Assortment of fresh baked fruit breads and muffins 5.50</p></span><br>
+    <a class="btn btn-primary btn-lg" th:href="@{'/ponuda'}" style="margin-top: 50px" role="button">Nazad na ponudu</a>
+    <hr>
+    <a th:href="@{'/azuriraj/artikal?id=' + ${artikal.getId()}}" type="button" class="btn btn-warning">Izmijeni</a>
+    <br>
+    <br>
+    <a th:href="@{'/korpa/dodaj?id=' + ${artikal.getId()}}" type="button" class="btn btn-info">Dodaj u Korpu</a>
+</div>
+</body>
+</html>
